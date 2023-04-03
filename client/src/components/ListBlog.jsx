@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
-import Student from './Student';
+import BlogCard from './BlogCard';
 
 const ListStudents = () => {
 
@@ -65,7 +65,7 @@ const ListStudents = () => {
             <h2>Techtonica Participants </h2>
             <ul>
                 {students.map((student) => {
-                    return <li key={student.id}> <Student student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>
+                    return <li key={student.id}> <BlogCard student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
             </ul>
         </div>
