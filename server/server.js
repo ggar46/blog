@@ -15,28 +15,30 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hola, from My template ExpressJS with React-Vite' });
 });
 
-// create the get request for students in the endpoint '/api/students'
-app.get('/api/students', async (req, res) => {
+// BLOG GET REQUEST------------------------------------------------------------------------------------
+app.get('/api/blog', async (req, res) => {
     try {
-        const { rows: students } = await db.query('SELECT * FROM students');
-        res.send(students);
+        const { rows: blog } = await db.query('SELECT * FROM blog');
+        res.send(blog);
     } catch (e) {
         return res.status(400).json({ e });
     }
 });
 
-// create the POST request
-app.post('/api/students', async (req, res) => {
+// BLOG POST REQUEST------------------------------------------------------------------------------------
+app.post('/api/postblog', async (req, res) => {
     try {
-        const newStudent = {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            iscurrent: req.body.iscurrent
+        const newPost = {
+            title: req.body.title,
+            author: req.body.author,
+            excerpt: req.body.excerpt,
+            text: req.body.text,
+            image: req.body.image
         };
         //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
         const result = await db.query(
-            'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-            [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
+            'INSERT INTO blog(title, author, excerpt, text, image) VALUES($1, $2, $3, $4, $5) RETURNING *',
+            [newPost.title, newPost.author, newPost.excerpt, newPost.text, newPost.image],
         );
         console.log(result.rows[0]);
         res.json(result.rows[0]);
@@ -48,41 +50,78 @@ app.post('/api/students', async (req, res) => {
 
 });
 
-// delete request for students
-app.delete('/api/students/:studentId', async (req, res) => {
+// COMMENT GET REQUEST------------------------------------------------------------------------------------
+//working
+app.get('/api/comments', async (req, res) => {
     try {
-        const studentId = req.params.studentId;
-        await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-        console.log("From the delete request-url", studentId);
-        res.status(200).end();
+        const { rows: comments } = await db.query('SELECT * FROM comments');
+        res.send(comments);
     } catch (e) {
-        console.log(e);
         return res.status(400).json({ e });
-
     }
 });
 
-//A put request - Update a student 
-app.put('/api/students/:studentId', async (req, res) =>{
-    //console.log(req.params);
-    //This will be the id that I want to find in the DB - the student to be updated
-    const studentId = req.params.studentId
-    const updatedStudent = { id: req.body.id, firstname: req.body.firstname, lastname: req.body.lastname, iscurrent: req.body.is_current}
-    console.log("In the server from the url - the student id", studentId);
-    console.log("In the server, from the react - the student to be edited", updatedStudent);
-    // UPDATE students SET lastname = "something" WHERE id="16";
-    const query = `UPDATE students SET firstname=$1, lastname=$2, is_current=$3 WHERE id=${studentId} RETURNING *`;
-    const values = [updatedStudent.firstname, updatedStudent.lastname, updatedStudent.iscurrent];
+
+// COMMENT POST REQUEST------------------------------------------------------------------------------------
+//working
+app.post('/api/postcomments', async (req, res) => {
     try {
-      const updated = await db.query(query, values);
-      console.log(updated.rows[0]);
-      res.send(updated.rows[0]);
-  
-    }catch(e){
-      console.log(e);
-      return res.status(400).json({e})
+        const newComment = {
+            id_blog: req.body.id_blog,
+            username: req.body.username,
+            commenttext: req.body.commenttext
+        };
+        //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
+        const result = await db.query(
+            'INSERT INTO comments(id_blog, username, commenttext) VALUES($1, $2, $3) RETURNING *',
+            [newComment.id_blog, newComment.username, newComment.commenttext],
+        );
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
+
+    } catch (e) {
+        console.log(e);
+        return res.status(400).json({ e });
     }
-  })
+
+});
+
+
+//delete request for students
+// app.delete('/api/students/:studentId', async (req, res) => {
+//     try {
+//         const studentId = req.params.studentId;
+//         await db.query('DELETE FROM students WHERE id=$1', [studentId]);
+//         console.log("From the delete request-url", studentId);
+//         res.status(200).end();
+//     } catch (e) {
+//         console.log(e);
+//         return res.status(400).json({ e });
+
+//     }
+// });
+
+//A put request - Update a student 
+// app.put('/api/students/:studentId', async (req, res) =>{
+//     //console.log(req.params);
+//     //This will be the id that I want to find in the DB - the student to be updated
+//     const studentId = req.params.studentId
+//     const updatedStudent = { id: req.body.id, firstname: req.body.firstname, lastname: req.body.lastname, iscurrent: req.body.is_current}
+//     console.log("In the server from the url - the student id", studentId);
+//     console.log("In the server, from the react - the student to be edited", updatedStudent);
+//     // UPDATE students SET lastname = "something" WHERE id="16";
+//     const query = `UPDATE students SET firstname=$1, lastname=$2, is_current=$3 WHERE id=${studentId} RETURNING *`;
+//     const values = [updatedStudent.firstname, updatedStudent.lastname, updatedStudent.iscurrent];
+//     try {
+//       const updated = await db.query(query, values);
+//       console.log(updated.rows[0]);
+//       res.send(updated.rows[0]);
+  
+//     }catch(e){
+//       console.log(e);
+//       return res.status(400).json({e})
+//     }
+//   })
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
