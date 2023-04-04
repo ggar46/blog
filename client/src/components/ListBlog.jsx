@@ -36,7 +36,7 @@ const ListStudents = () => {
             <h2>Techtonica Participants </h2>
             <ul>
                 {blogPostsFromDB.map((blogPost) => {
-                    return <li key={blogPost.id_blog}> <BlogCard blogPostsFromDB={blogPostsFromDB}/></li>
+                    return <li key={blogPost.id_blog}> <BlogCard blogPost={blogPost}/></li>
                 })}
             </ul>
         </div>
