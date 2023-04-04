@@ -147,9 +147,9 @@ const MyForm = ({ onSaveBlogPost }) => {
             <Form.Group>
                 <Form.Label>Image</Form.Label>
                 <input
-                    type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    type="file"
+                    id="add-image"
+                    placeholder="Image"
                     required
                     value={formUserInput.image}
                     onChange={handleImageChange}

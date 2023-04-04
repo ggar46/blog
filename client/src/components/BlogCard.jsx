@@ -18,7 +18,8 @@ const BlogCard = ({blogPost}) => {
         <Card>
             <Card.Body>
             <Card.Title>{blogPost.title}</Card.Title>
-            <p> By: {blogPost.author}</p>
+            <p>{blogPost.date}</p>
+            <p> By: {blogPost.author}</p> 
             <p> {blogPost.excerpt} </p>
             {/* <Button variant="outline-danger" onClick={()=>{onDelete(onSaveBlogPost)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
             <Button variant="outline-info" onClick={()=>{onUpdate(onSaveBlogPost)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
