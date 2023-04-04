@@ -4,32 +4,44 @@ import { Button, Form } from "react-bootstrap"
 const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
 
     // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+    const [formUserInput, setFormUserInput] = useState(editingStudent || {
+        title: "", 
+        author: "", 
+        excerpt: "", 
+        text: "", 
+        image:"" 
     });
 
     //create functions that handle the event of the user typing into the form
-    const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
+    const handleTitleChange = (event) => {
+        const title = event.target.value;
+        setFormUserInput((formUserInput) => ({ ...formUserInput, title }));
 
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
+    const handleAuthorChange = (event) => {
+        const author = event.target.value;
+        setFormUserInput((formUserInput) => ({ ...formUserInput, author }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
+    const handleExcerptChange = (event) => {
+        const excerpt = event.target.value;
         //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
+        setFormUserInput((formUserInput) => ({ ...formUserInput, excerpt }));
     };
+
+    const handleTextChange = (event) => {
+        const text = event.target.value;
+        setFormUserInput((formUserInput) => ({ ...formUserInput, text}));
+    }
+
+    const handleImageChange = (event) => {
+        const image = event.target.value;
+        setFormUserInput((formUserInput) => ({ ...formUserInput, image}));
+    }
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setFormUserInput({ title: "", author: "", excerpt: "", text: "", image:"" })
     }
 
     //A function to handle the post request
@@ -82,34 +94,65 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     return (
         <Form className='form-students' onSubmit={handleSubmit}>
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <input
                     type="text"
-                    id="add-user-name"
-                    placeholder="First Name"
+                    id="add-title"
+                    placeholder="Title"
                     required
-                    value={student.firstname}
-                    onChange={handleNameChange}
+                    value={student.title}
+                    onChange={handleTitleChange}
                 />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label>Author</Form.Label>
+                <input
+                    type="text"
+                    id="add-author"
+                    placeholder="Author"
+                    required
+                    value={student.author}
+                    onChange={handleAuthorChange}
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Excerpt</Form.Label>
                 <input
                     type="text"
                     id="add-user-lastname"
                     placeholder="Last Name"
                     required
                     value={student.lastname}
-                    onChange={handleLastnameChange}
+                    onChange={handleExcerptChange}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
+
+
+            <Form.Group>
+                <Form.Label>Text</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-lastname"
+                    placeholder="Last Name"
+                    required
+                    value={student.lastname}
+                    onChange={handleTextChange}
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Image</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-lastname"
+                    placeholder="Last Name"
+                    required
+                    value={student.lastname}
+                    onChange={handleImageChange}
+                />
+            </Form.Group>
+
             <Form.Group>
             <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
             {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
