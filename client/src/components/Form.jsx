@@ -46,7 +46,7 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
 
     //A function to handle the post request
     const postStudent = (newStudent) => {
-        return fetch("http://localhost:8080/api/students", {
+        return fetch("http://localhost:8080/api/postblog", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newStudent),
@@ -64,31 +64,33 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
     };
 
     //A function to handle the post request
-    const putStudent = (toEditStudent) => {
-        return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(toEditStudent),
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                onUpdateStudent(data);
-                //this line just for cleaning the form
-                clearForm();
-            });
-    };
+    // const putStudent = (toEditStudent) => {
+    //     return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
+    //         method: "PUT",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(toEditStudent),
+    //     })
+    //         .then((response) => {
+    //             return response.json();
+    //         })
+    //         .then((data) => {
+    //             onUpdateStudent(data);
+    //             //this line just for cleaning the form
+    //             clearForm();
+    //         });
+    // };
 
 
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (student.id) {
-            putStudent(student);
-        } else {
-            postStudent(student);
-        }
+        postStudent(student);
+        // if (student.id) {
+        //     putStudent(student);
+        // } 
+        // else {
+        //     postStudent(student);
+        // }
     };
 
     return (

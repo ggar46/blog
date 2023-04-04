@@ -29,22 +29,6 @@ const ListStudents = () => {
     }
 
 
-    //A function to handle the Delete funtionality
-    // const onDelete = (student) => {
-    //     //console.log(student, "delete method")
-    //     return fetch(`http://localhost:8080/api/students/${student.id}`, {
-    //         method: "DELETE"
-    //     }).then((response) => {
-    //         //console.log(response);
-    //         if (response.ok) {
-    //             loadStudents();
-    //         }
-    //     })
-    // }
-
-   
-
-
 
     return (
         <div className="mybody">
