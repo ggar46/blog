@@ -157,7 +157,7 @@ const MyForm = ({ onSaveBlogPost }) => {
             </Form.Group>
 
             <Form.Group>
-            <Button type="submit" variant="outline-success">{formUserInput.id_blog ? "Edit Student" : "Add Blog Post"}</Button>
+            <Button id="submit" type="submit" variant="outline-success">{formUserInput.id_blog ? "Edit Student" : "Add Blog Post"}</Button>
             {formUserInput.id_blog ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
         </Form>
