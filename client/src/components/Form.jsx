@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 
-const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
+const MyForm = ({ onSaveBlogPost }) => {
 
     // This is the original State with not initial student 
-    const [formUserInput, setFormUserInput] = useState(editingStudent || {
+    const [formUserInput, setFormUserInput] = useState({
         title: "", 
         author: "", 
         excerpt: "", 
@@ -45,11 +45,11 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
     }
 
     //A function to handle the post request
-    const postStudent = (newStudent) => {
+    const postBlogPost = (newBlogPost) => {
         return fetch("http://localhost:8080/api/postblog", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newStudent),
+            body: JSON.stringify(newBlogPost),
         })
             .then((response) => {
                 return response.json();
@@ -57,7 +57,7 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
             .then((data) => {
                 //console.log("From the post ", data);
                 //I'm sending data to the List of Students (the parent) for updating the list
-                onSaveStudent(data);
+                onSaveBlogPost(data);
                 //this line just for cleaning the form
                 clearForm();
             });
@@ -84,7 +84,7 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        postStudent(student);
+        postBlogPost(formUserInput);
         // if (student.id) {
         //     putStudent(student);
         // } 
@@ -102,10 +102,11 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
                     id="add-title"
                     placeholder="Title"
                     required
-                    value={student.title}
+                    value={formUserInput.title}
                     onChange={handleTitleChange}
                 />
             </Form.Group>
+
             <Form.Group>
                 <Form.Label>Author</Form.Label>
                 <input
@@ -113,7 +114,7 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
                     id="add-author"
                     placeholder="Author"
                     required
-                    value={student.author}
+                    value={formUserInput.author}
                     onChange={handleAuthorChange}
                 />
             </Form.Group>
@@ -123,9 +124,9 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
                 <input
                     type="text"
                     id="add-user-lastname"
-                    placeholder="Last Name"
+                    placeholder="Excerpt"
                     required
-                    value={student.lastname}
+                    value={formUserInput.excerpt}
                     onChange={handleExcerptChange}
                 />
             </Form.Group>
@@ -138,7 +139,7 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
                     id="add-user-lastname"
                     placeholder="Last Name"
                     required
-                    value={student.lastname}
+                    value={formUserInput.text}
                     onChange={handleTextChange}
                 />
             </Form.Group>
@@ -150,14 +151,14 @@ const MyForm = ({ onSaveStudent, onUpdateStudent }) => {
                     id="add-user-lastname"
                     placeholder="Last Name"
                     required
-                    value={student.lastname}
+                    value={formUserInput.image}
                     onChange={handleImageChange}
                 />
             </Form.Group>
 
             <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            <Button type="submit" variant="outline-success">{formUserInput.id_blog ? "Edit Student" : "Add Blog Post"}</Button>
+            {formUserInput.id_blog ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
         </Form>
     );

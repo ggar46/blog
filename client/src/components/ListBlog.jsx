@@ -6,26 +6,26 @@ import BlogCard from './BlogCard';
 const ListStudents = () => {
 
     // this is my original state with an array of students 
-    const [students, setStudents] = useState([]);
+    const [blogPostsFromDB, setBlogPostsFromDB] = useState([]);
 
 
-    const loadStudents = () => {
+    const loadBlogPosts = () => {
         // A function to fetch the list of students that will be load anytime that list change
-        fetch("http://localhost:8080/api/students")
+        fetch("http://localhost:8080/api/blog")
             .then((response) => response.json())
-            .then((students) => {
-                setStudents(students);
+            .then((data) => {
+                setBlogPostsFromDB(data);
             });
     }
 
     useEffect(() => {
-        loadStudents();
-    }, [students]);
+        loadBlogPosts();
+    }, [blogPostsFromDB]);
 
 
-    const onSaveStudent = (newStudent) => {
+    const onSaveBlogPost = (newBlogPost) => {
         //console.log(newStudent, "From the parent - List of Students");
-        setStudents((students) => [...students, newStudent]);
+        setBlogPostsFromDB((blogPostsFromDB) => [...blogPostsFromDB, newBlogPost]);
     }
 
 
@@ -35,12 +35,12 @@ const ListStudents = () => {
         <div className="list-students">
             <h2>Techtonica Participants </h2>
             <ul>
-                {students.map((student) => {
-                    return <li key={student.id}> <BlogCard student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>
+                {blogPostsFromDB.map((blogPost) => {
+                    return <li key={blogPost.id_blog}> <BlogCard blogPostsFromDB={blogPostsFromDB}/></li>
                 })}
             </ul>
         </div>
-        <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} onUpdateStudent={updateStudent} />
+        <MyForm onSaveBlogPost={onSaveBlogPost}/>
         </div>
     );
 }
