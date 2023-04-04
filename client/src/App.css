@@ -29,6 +29,7 @@ form {
   /* text-align: left; */
   margin-top: 3em;
   /* flex: 1; */
+
 }
 
 input[type=text] {
@@ -40,6 +41,10 @@ input[type=text] {
   border: 3px solid #f198eb
 }
 
+.form-students{
+  margin: auto;
+  width: 40%;
+}
 /* button.btn.btn-primary {
   margin-top: 25px;
 } */
