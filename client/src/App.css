@@ -10,19 +10,12 @@
   padding: 1em;
 }
 
-a.navbar-brand {
-  margin-inline-start: -5em;
-}
 
-.nav-link {
-  color: white !important;
-  margin-left: 5em;
-}
 
 .list-students {
   text-align: center;
   margin-top: 25px;
-  flex: 1
+  /* flex: 1 */
 }
 
 ul {
