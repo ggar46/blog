@@ -20,7 +20,7 @@ const ListStudents = () => {
 
     useEffect(() => {
         loadBlogPosts();
-    }, [blogPostsFromDB]);
+    }, []);
 
 
     const onSaveBlogPost = (newBlogPost) => {
