@@ -4,6 +4,7 @@ import ListBlog from './components/ListBlog'
 
 
 function App() {
+const[visibility, setVisibility] = useState(false);
 
   return (
     <div className="App">

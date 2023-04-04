@@ -19,6 +19,7 @@ const BlogCard = ({blogPost}) => {
             <Card.Body>
             <Card.Title>{blogPost.title}</Card.Title>
             <p>{blogPost.date}</p>
+            <image src={blogPost.image}/>
             <p> By: {blogPost.author}</p> 
             <p> {blogPost.excerpt} </p>
             {/* <Button variant="outline-danger" onClick={()=>{onDelete(onSaveBlogPost)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
