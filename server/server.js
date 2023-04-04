@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 // BLOG GET REQUEST------------------------------------------------------------------------------------
+//working
 app.get('/api/blog', async (req, res) => {
     try {
         const { rows: blog } = await db.query('SELECT * FROM blog');
@@ -26,6 +27,7 @@ app.get('/api/blog', async (req, res) => {
 });
 
 // BLOG POST REQUEST------------------------------------------------------------------------------------
+//working
 app.post('/api/postblog', async (req, res) => {
     try {
         const newPost = {

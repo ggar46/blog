@@ -30,12 +30,6 @@ const ListStudents = () => {
     }
 
 
-    //A function to control the update in the parent (student component)
-    const updateStudent = (savedStudent) => {
-        // console.log("Line 29 savedStudent", savedStudent);
-        // This function should update the whole list of students - 
-        loadStudents();
-    }
 
     //A function to handle the Delete funtionality
     const onDelete = (student) => {
@@ -50,12 +44,7 @@ const ListStudents = () => {
         })
     }
 
-    //A function to handle the Update functionality
-    const onUpdate = (toUpdateStudent) => {
-        //console.log(toUpdateStudent);
-        setEditingStudent(toUpdateStudent);
-
-    }
+   
 
 
 
@@ -69,7 +58,7 @@ const ListStudents = () => {
                 })}
             </ul>
         </div>
-        <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} />
+        <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} onUpdateStudent={updateStudent} />
         </div>
     );
 }
