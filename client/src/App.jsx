@@ -1,15 +1,35 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListBlog from './components/ListBlog'
+import Expand from './routes/Expand';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './routes/Home';
+import Root from './Routes/Root';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root/>,
+    children: [
+      {
+       index: true,
+       element: <Home/>
+      },
+      {
+        path: "/blog/:id", 
+        element: <Expand/>
+      }
+    ]
+
+  },
+]);
 
 
 function App() {
-const[visibility, setVisibility] = useState(false);
+
 
   return (
-    <div className="App">
-      <ListBlog />
-    </div>
+     <RouterProvider router={router} />
+   
   )
 }
 

@@ -34,7 +34,7 @@ const ListStudents = () => {
         <div className="mybody">
 
         <div className="list-students">
-        <h2>Techtonica Participants </h2>
+        <h2> Blog Posts </h2>
         <MyForm onSaveBlogPost={onSaveBlogPost}/>
             <ul>
                 {blogPostsFromDB.map((blogPost) => {
