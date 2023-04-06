@@ -34,7 +34,7 @@ form {
 
 }
 
-input[type=text] {
+input[type=text], input[type=url] {
   display: inline-block;
   margin-top: -10px;
   width: 100%;
@@ -75,18 +75,27 @@ img{
   margin: auto;
   text-align: center;
   width: 40%;
+  max-height: 40%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
-/* 
-img{
 
+h1{
+  text-align: center;
+  padding-top: 3%;
 }
+
 
 .expandContentDiv{
-
+  margin: auto;
+  text-align: center;
 }
 
 h3{
+  margin: auto;
+  text-align: center;
+  padding-top: 7%;
 
-} */
+}
 
 
