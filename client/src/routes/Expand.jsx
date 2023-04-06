@@ -1,15 +1,44 @@
 
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useState,  useEffect } from 'react';
 
 
-const Expand= ()=> {
-    let { id: blogID } = useParams();
+const Expand =()=> {
+    let {id} = useParams();
+    console.log(id, "here");
+    //experiment
+    const [post, setPost] = useState([]);
+
+    //experiment receives is here 
+    const loadOnePost = (id) => {
+
+        fetch(`http://localhost:8080/api/blog/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setPost(data);
+                console.log(data)
+            
+            });
+    }
+
+    
+    
+    useEffect(() => {
+        loadOnePost(id);
+    }, []);
+
 
 
 return(
-    <div>
-        <p>This is the Blog Page, with blog ID: {blogID}</p>
+    <div className='expandContentDiv'>
+        <h3>{post[0]?.title}</h3>
+        <p>{post[0]?.date.substring(0,10)}</p>
+        <p>By: {post[0]?.author}</p>
+        <p id="italicsExcerpt">{post[0]?.excerpt}</p>
+        <p>{post[0]?.text}</p>
+
+      
     </div>
 
 )};
@@ -17,17 +46,3 @@ return(
 
 
 export default Expand;
-
-// const Expand = (props) => {
-//     const handleExpand = (event) => {
-//         event.preventDefault;
-//         console.log("hi");
-//     }
-// return(
-//     <div>
-//         <button onClick={handleExpand}>Expand</button>
-//         <div> {props.text} </div>
-//     </div>
-// )}
-
-// export default Expand;

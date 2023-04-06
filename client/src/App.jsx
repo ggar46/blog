@@ -5,13 +5,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home';
 import Root from './Routes/Root';
 
+
 const router = createBrowserRouter([
+
   {
     path: "/",
     element: <Root/>,
     children: [
       {
        index: true,
+       //REMOVE INSIDE TAG
        element: <Home/>
       },
       {

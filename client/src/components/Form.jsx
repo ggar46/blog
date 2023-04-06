@@ -36,7 +36,7 @@ const MyForm = ({ onSaveBlogPost }) => {
     }
 
     const handleImageChange = (event) => {
-        const image = event.target.value;
+        const image = event.target.file;
         setFormUserInput((formUserInput) => ({ ...formUserInput, image}));
     }
 
@@ -150,6 +150,7 @@ const MyForm = ({ onSaveBlogPost }) => {
                     type="file"
                     id="add-image"
                     placeholder="Image"
+                    name="file"
                     required
                     value={formUserInput.image}
                     onChange={handleImageChange}

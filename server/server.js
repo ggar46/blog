@@ -15,6 +15,21 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hola, from My template ExpressJS with React-Vite' });
 });
 
+//single BLOG GET REQUEST------------------------------------------------------------------------------------
+app.get('/api/blog/:id', async (req, res) => {
+
+    try {
+        const id_blog = req.params.id
+        const {rows} = await db.query('SELECT * FROM blog WHERE id_blog=$1', [id_blog]);
+        console.log(rows, "here are the rows");
+        res.send(rows);
+
+    } catch (e) {
+        return res.status(400).json({ e });
+    }
+});
+
+
 // BLOG GET REQUEST------------------------------------------------------------------------------------
 //working
 app.get('/api/blog', async (req, res) => {
