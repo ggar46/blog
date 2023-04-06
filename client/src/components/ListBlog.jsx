@@ -41,7 +41,7 @@ const ListStudents = () => {
             <ul>
                 {blogPostsFromDB.map((blogPost) => {
                     return <li key={blogPost.id_blog}> <BlogCard blogPost={blogPost}/></li>
-                })}
+                }).reverse()}
             </ul>
         </div>
 

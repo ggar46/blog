@@ -36,7 +36,7 @@ const MyForm = ({ onSaveBlogPost }) => {
     }
 
     const handleImageChange = (event) => {
-        const image = event.target.file;
+        const image = event.target.value;
         setFormUserInput((formUserInput) => ({ ...formUserInput, image}));
     }
 
@@ -136,14 +136,26 @@ const MyForm = ({ onSaveBlogPost }) => {
                 <Form.Label>Text</Form.Label>
                 <input
                     type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    id="add-text"
+                    placeholder="Text"
                     required
                     value={formUserInput.text}
                     onChange={handleTextChange}
                 />
             </Form.Group>
 
+            <Form.Group>
+                <Form.Label>Image</Form.Label>
+                <input
+                    type="url"
+                    id="add-image-url"
+                    placeholder="Image URL"
+                    required
+                    value={formUserInput.image}
+                    onChange={handleImageChange}
+                />
+            </Form.Group>
+{/* 
             <Form.Group>
                 <Form.Label>Image</Form.Label>
                 <input
@@ -155,7 +167,7 @@ const MyForm = ({ onSaveBlogPost }) => {
                     value={formUserInput.image}
                     onChange={handleImageChange}
                 />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group>
             <Button id="submit" type="submit" variant="outline-success">{formUserInput.id_blog ? "Edit Student" : "Add Blog Post"}</Button>

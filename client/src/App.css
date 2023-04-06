@@ -71,7 +71,11 @@ input[type=text] {
   margin-bottom: 7%;
 }
 
-
+img{
+  margin: auto;
+  text-align: center;
+  width: 40%;
+}
 /* 
 img{
 
