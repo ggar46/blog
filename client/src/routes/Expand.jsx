@@ -33,6 +33,7 @@ const Expand =()=> {
 return(
     <div className='expandContentDiv'>
         <h3>{post[0]?.title}</h3>
+        <img src={post[0]?.image}/>
         <p>{post[0]?.date.substring(0,10)}</p>
         <p>By: {post[0]?.author}</p>
         <p id="italicsExcerpt">{post[0]?.excerpt}</p>
