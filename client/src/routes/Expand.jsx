@@ -36,7 +36,6 @@ return(
         <p>By: {post[0]?.author}</p>
         <p>{post[0]?.date.substring(0,10)}</p>
         <img id="pageImage" src={post[0]?.image}/>
-        <p id="italicsExcerpt">{post[0]?.excerpt}</p>
         <p id="bodyText"> {post[0]?.text}</p>
 
       
