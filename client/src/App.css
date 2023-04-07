@@ -8,18 +8,15 @@
 }
 
 .mybody {
-  /* display: flex; */
   gap: 3em;
   padding: 1em;
-  background-color: FEF9E6;
+  background-color: #FEF9E6;
 }
-
-
 
 .list-students {
   text-align: center;
   margin-top: 25px;
-  /* flex: 1 */
+
 }
 
 ul {
@@ -92,7 +89,7 @@ div.card{
 
 h1{
   text-align: center;
-  padding-top: 3%;
+  padding-top: 5%;
   font-family: 'Literata', serif;
   font-weight: bolder;
   color: #A3D18E;
@@ -116,7 +113,7 @@ h1{
 h3{
   margin: auto;
   text-align: center;
-  padding-top: 7%;
+  padding-top: 4%;
   font-family: 'Literata', serif;
   color: F3435C;
 }
@@ -125,10 +122,10 @@ h2{
   color: #A3D18E;
 }
 
-h3{
+/* h3{
   font-family: 'Literata', serif;
   font-weight: bolder;
-}
+} */
 
 #italicsExcerpt{
   font-style: italic;
@@ -136,4 +133,14 @@ h3{
 
 #link {
   color: rgb(255, 255, 255);
+}
+
+#greenheart{
+  text-align: center;
+  margin-top: 4%;
+}
+
+.green-color {
+  color:#A3D18E;
+  font-size: x-large;
 }

@@ -1,67 +1,58 @@
-<!-- # Your First Express and React App with Vite
- ⚡ Create a working full stack app with React and Express in minutes by running your client using Vite, your server using Express, and dumping your db in the template ⚡
-
-## Step by Step instructions - To use this project as your start point  🚀  
-## To create the whole project
+# About the Project
+---
+This application is a simple blog page that allows users to add posts that appear as a list of cards. Each card has a title, author, date, photo, excerpt, and a link to the post content as a separate page. The data from the application is fetched from a PostGreSQL database.
 
 
-1. Go to your source directory in your terminal and run the command `git clone https://github.com/Yosolita1978/Template2023React-Vite.git NAMENEWDIRECTORY`
+## Built With
 
-2. To clean the owner git out of the main directory, run the command `rm -rf .git`
+* React
+* Bootstrap
+* PostGreSQL
 
-3. Then while still within the main directory in your terminal, run the command `git init` to start your own git track 
+## Getting Started
+---
 
-![You will something like this in your terminal](https://user-images.githubusercontent.com/102179075/227304861-7ad633d7-5ec0-463a-8554-9e8b4c8caaad.png?raw=true)
 
-4. Go to the server folder in the project (`cd server`) and run the command `npm install`
+### Prerequisites
+* npm
 
-5. Inside your server folder, create an .env file with `touch .env`
+### Installation
+This project does not rely on any external dependencies or services.
+1. Clone the repo ```git clone https://github.com/ggar46/Eventonica/tree/eventonicabranch <NAMENEWDIRECTORY>```
+2. Install NPM packages ```npm install```
+3. Add the database using PostGreSQL.
+    1. Inside your server directory create a `.env` file and copy there the values that are in `.envexample`
+    2. Open a terminal window, and go to the psql terminal with the comand `psql`
+    3. Inside the psql prompt create your database eventonica with the command `create database blog;` (don't forget the semicolon!)
+    4. Go inside the server directory of your project, and run the command `psql -d blog -f db.sql` that will create a table `blog` with 7 rows inside your db eventonica. 
 
-⚠️ All these instructions should be inside your server folder ⚠️
 
-6. There are two ways to restore the DB dump file the project already contains: 
+## Usage
 
-A- If you have postgres set up postgres with an User:  
- * just run the command `psql -U postgres -f db.sql`. Make sure that you have your Postgres password on hand. The psql console will ask for your password. 
+Features
+* Add events by filling out the event title, author,short excerpt, and text. The date is populated automatically.
+* Access pages for each card by clicking on each card link.
 
-B- If your initial configuration of postgres doesn't require a User:
-* just run the command `psql -f db.sql`
 
-7. Inside your server folder, open the file `.env.example` and copy the correct option for your configuation found there to your new .env file. 
+## Contributing
 
-Here is what your `.env` might look like:
+If you have a suggestion that would make this better, please fork the repo and create a pull request:
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-```
-DB_URI="postgresql://localhost/techtonica"
-``` 
-For this template, the name of your db should be `techtonica`.
 
-⚠️ If you don't see a `techtonica` db, you can create one. From the terminal, navigate to the psql command line with `psql` and type `create database techtonica;` - don't forget the semicolon!! ⚠️
+## Contact
 
-![You will something like this in your terminal](https://raw.githubusercontent.com/Yosolita1978/screenshoots/a4674c79f61b39547b068044c5e5f2bd8510a4b8/2023/H1/Screen%20Shot%202023-03-22%20at%2011.03.12%20PM.png)
+Gisselle Garcia - email@example.com
+Project Link - https://github.com/ggar46/blog
 
-8. Go to the client folder in the project (`cd .. and cd client`) and run the command `npm install`
 
-🔎 The `npm install` command installs the required dependencies defined in the package.json files and generates a node_modules folder with the installed modules.
-
-⚡ Note: Using Vite we can avoid all the package deprecation warnings ⚡
-
-9. If you want to run both servers using concurrently (which is already a npm dependency on the server) you can keep the script in the package.json in the server that reads `"dev": " concurrently 'npm start' 'cd .. && cd client && npm run dev' "`. If you run the command `npm run dev` from within your server, both the client and backend servers will start.
-
-10. Go to localhost:5173 and you should see something like this  💪
-
-![You will something like this in your terminal.](https://raw.githubusercontent.com/Yosolita1978/screenshoots/2f6afdd2318809714071b7625776c195903758ca/2023/H1/Screen%20Shot%202023-03-22%20at%2010.40.36%20PM.png)
-
-⚡ **Notes** ⚡  
-* React requires **Node >= 14.0.0** & **npm >= 5.6**
-* This template is using icons from `react-icons/io5` and `react-bootstrap` in the frontend. You can see all the frontend dependencies in the package.json on the `client` folder
-* Please note that your backend server will run from `port 8080`, and your frontend React server will run from `port 5173` (the default Vite port).
-
-* Confused about why use Vite? 🤔 → Check out the [Create a new React app with Vite](https://scrimba.com/articles/create-react-app-with-vite/)
-
-⚙️ Links that you could need:
-
-* The instructions for [pg](https://node-postgres.com/apis/pool)  
-* Setup [postgres correctly](https://github.com/Techtonica/curriculum/blob/main/databases/installing-postgresql.md) -->
-
+## Acknowledgments
+---
+* Icons library [fontAwesomeLibrary](https://fontawesomeicons.com/heart)
+* Base template by Yosolita1978 [Link to Github](https://github.com/Yosolita1978/2023EventonicaTemplate)
+* React-router [Link to GitHub Template] (https://github.com/remix-run/react-router/tree/dev/examples/notes)
 
