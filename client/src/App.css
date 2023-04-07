@@ -97,6 +97,7 @@ h1{
   font-weight: bolder;
   color: #A3D18E;
   font-size: xx-large;
+  
 }
 
 
@@ -131,4 +132,8 @@ h3{
 
 #italicsExcerpt{
   font-style: italic;
+}
+
+#link {
+  color: rgb(255, 255, 255);
 }

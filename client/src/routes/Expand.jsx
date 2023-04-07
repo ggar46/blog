@@ -2,6 +2,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState,  useEffect } from 'react';
+import { FaHeart }  from "react-icons/fa";
+
 
 
 const Expand =()=> {
@@ -32,6 +34,7 @@ const Expand =()=> {
 
 return(
     <div className='expandContentDiv'>
+        
         <h3>{post[0]?.title}</h3>
         <p>By: {post[0]?.author}</p>
         <p>{post[0]?.date.substring(0,10)}</p>

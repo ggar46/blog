@@ -28,7 +28,7 @@ const BlogCard = ({blogPost}) => {
             <p>{blogPost.date.substring(0,10)}</p>
             <Card.Img src={blogPost.image}/>
             <Card.Text>{blogPost.excerpt}</Card.Text>
-                    <Link to={`/blog/${blogPost.id_blog}`} > Click here to Read This Blog</Link>
+                    <Link id="link" to={`/blog/${blogPost.id_blog}`} > Click here to Read This Blog</Link>
                 
             {/* <Button variant="outline-danger" onClick={()=>{onDelete(blogPost)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
             <Button variant="outline-info" onClick={()=>{onUpdate(blogPost)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
