@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,300;1,500&display=swap');
+
 .App {
   min-height: 100vh;
-  background-color: rgb(238, 232, 232);
+  background-color: #cdb4db;
   margin: 5px;
 }
 
@@ -8,6 +11,7 @@
   /* display: flex; */
   gap: 3em;
   padding: 1em;
+  background-color: FEF9E6;
 }
 
 
@@ -34,22 +38,21 @@ form {
 
 }
 
-input[type=text] {
+input[type=text], input[type=url], textarea {
   display: inline-block;
   margin-top: -10px;
   width: 100%;
   font-size: 15px;
   border-radius: 2px;
-  border: 3px solid #f198eb
+  border: 3px solid #A3D18E;
+  /* background-color: #f6dbdb; */
 }
 
 .form-students{
   margin: auto;
   width: 40%;
+  font-family: 'Literata', serif;
 }
-/* button.btn.btn-primary {
-  margin-top: 25px;
-} */
 
 
 .form-label {
@@ -61,12 +64,76 @@ input[type=text] {
   margin-top: 1em;
 }
 
+div.card{
+  background-color: #bcdfac;
+}
+
 .card-body {
   margin-left: 2em;
   margin-right: 2em;
 }
 
+#Card.Text{
+  font-style: italic;
+}
+
 #submit {
   margin-top: 5%;
   margin-bottom: 7%;
+}
+
+#pageImage{
+  margin: auto;
+  text-align: center;
+  max-width: 40%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+h1{
+  text-align: center;
+  padding-top: 3%;
+  font-family: 'Literata', serif;
+  font-weight: bolder;
+  color: #A3D18E;
+  font-size: xx-large;
+  
+}
+
+
+.expandContentDiv{
+  margin: auto;
+  text-align: center;
+}
+
+#bodyText{
+  white-space: pre-wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: left;
+}
+
+h3{
+  margin: auto;
+  text-align: center;
+  padding-top: 7%;
+  font-family: 'Literata', serif;
+  color: F3435C;
+}
+
+h2{
+  color: #A3D18E;
+}
+
+h3{
+  font-family: 'Literata', serif;
+  font-weight: bolder;
+}
+
+#italicsExcerpt{
+  font-style: italic;
+}
+
+#link {
+  color: rgb(255, 255, 255);
 }

@@ -119,40 +119,41 @@ const MyForm = ({ onSaveBlogPost }) => {
                 />
             </Form.Group>
 
+
+            <Form.Group>
+                <Form.Label>Image</Form.Label>
+                <input
+                    type="url"
+                    id="add-image-url"
+                    placeholder="Image URL"
+                    required
+                    value={formUserInput.image}
+                    onChange={handleImageChange}
+                />
+            </Form.Group>
+
             <Form.Group>
                 <Form.Label>Excerpt</Form.Label>
                 <input
                     type="text"
                     id="add-user-lastname"
                     placeholder="Excerpt"
-                    required
+                    
                     value={formUserInput.excerpt}
                     onChange={handleExcerptChange}
                 />
             </Form.Group>
 
-
             <Form.Group>
                 <Form.Label>Text</Form.Label>
-                <input
-                    type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                <textarea
+                    type="textarea"
+                    id="text"
+                    placeholder="Text"
                     required
                     value={formUserInput.text}
                     onChange={handleTextChange}
-                />
-            </Form.Group>
-
-            <Form.Group>
-                <Form.Label>Image</Form.Label>
-                <input
-                    type="file"
-                    id="add-image"
-                    placeholder="Image"
-                    required
-                    value={formUserInput.image}
-                    onChange={handleImageChange}
+                    rows={4}
                 />
             </Form.Group>
 

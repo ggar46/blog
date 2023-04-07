@@ -1,8 +1,8 @@
 import ListBlog from "../components/ListBlog";
-const Home = () => {
+const Home = ({setBlogData}) => {
     return (
         <div>
-         <ListBlog/>
+         <ListBlog />
         </div>
     )};
     export default Home;

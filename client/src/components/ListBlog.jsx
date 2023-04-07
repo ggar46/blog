@@ -18,6 +18,8 @@ const ListStudents = () => {
             });
     }
 
+
+
     useEffect(() => {
         loadBlogPosts();
     }, []);
@@ -32,14 +34,13 @@ const ListStudents = () => {
 
     return (
         <div className="mybody">
-
         <div className="list-students">
-        <h2> Blog Posts </h2>
+        
         <MyForm onSaveBlogPost={onSaveBlogPost}/>
             <ul>
                 {blogPostsFromDB.map((blogPost) => {
                     return <li key={blogPost.id_blog}> <BlogCard blogPost={blogPost}/></li>
-                })}
+                }).reverse()}
             </ul>
         </div>
 
