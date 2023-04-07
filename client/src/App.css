@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Kantumruy+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,300;1,500&display=swap');
 
 .App {
   min-height: 100vh;
@@ -49,8 +49,7 @@ input[type=text], input[type=url], textarea {
 .form-students{
   margin: auto;
   width: 40%;
-  font-family: 'Fredoka', sans-serif;
-font-family: 'Kantumruy Pro', sans-serif;
+  font-family: 'Literata', serif;
 }
 /* button.btn.btn-primary {
   margin-top: 25px;
@@ -87,6 +86,8 @@ font-family: 'Kantumruy Pro', sans-serif;
 h1{
   text-align: center;
   padding-top: 3%;
+  font-family: 'Literata', serif;
+  color: F3435C;
 }
 
 
@@ -106,7 +107,7 @@ h3{
   margin: auto;
   text-align: center;
   padding-top: 7%;
-
+  font-family: 'Literata', serif;
 }
 
 
