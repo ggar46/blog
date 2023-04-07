@@ -48,6 +48,8 @@ input[type=text], input[type=url], textarea {
 .form-students{
   margin: auto;
   width: 40%;
+  font-family: 'Fredoka', sans-serif;
+font-family: 'Kantumruy Pro', sans-serif;
 }
 /* button.btn.btn-primary {
   margin-top: 25px;
