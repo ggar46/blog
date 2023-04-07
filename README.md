@@ -54,5 +54,5 @@ Project Link - https://github.com/ggar46/blog
 ---
 * Icons library [fontAwesomeLibrary](https://fontawesomeicons.com/heart)
 * Base template by Yosolita1978 [Link to Github](https://github.com/Yosolita1978/2023EventonicaTemplate)
-* React-router [Link to GitHub Template] (https://github.com/remix-run/react-router/tree/dev/examples/notes)
+* React-router [Link to Github Template](https://github.com/remix-run/react-router/tree/dev/examples/notes)
 
