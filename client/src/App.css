@@ -1,3 +1,5 @@
+
+
 .App {
   min-height: 100vh;
   background-color: rgb(238, 232, 232);
@@ -34,7 +36,7 @@ form {
 
 }
 
-input[type=text], input[type=url] {
+input[type=text], input[type=url], textarea {
   display: inline-block;
   margin-top: -10px;
   width: 100%;
@@ -71,11 +73,10 @@ input[type=text], input[type=url] {
   margin-bottom: 7%;
 }
 
-img{
+#pageImage{
   margin: auto;
   text-align: center;
-  width: 40%;
-  max-height: 40%;
+  max-width: 25%;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -89,6 +90,13 @@ h1{
 .expandContentDiv{
   margin: auto;
   text-align: center;
+}
+
+#bodyText{
+  white-space: pre-wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: left;
 }
 
 h3{

@@ -119,30 +119,6 @@ const MyForm = ({ onSaveBlogPost }) => {
                 />
             </Form.Group>
 
-            <Form.Group>
-                <Form.Label>Excerpt</Form.Label>
-                <input
-                    type="text"
-                    id="add-user-lastname"
-                    placeholder="Excerpt"
-                    required
-                    value={formUserInput.excerpt}
-                    onChange={handleExcerptChange}
-                />
-            </Form.Group>
-
-
-            <Form.Group>
-                <Form.Label>Text</Form.Label>
-                <input
-                    type="text"
-                    id="add-text"
-                    placeholder="Text"
-                    required
-                    value={formUserInput.text}
-                    onChange={handleTextChange}
-                />
-            </Form.Group>
 
             <Form.Group>
                 <Form.Label>Image</Form.Label>
@@ -155,19 +131,31 @@ const MyForm = ({ onSaveBlogPost }) => {
                     onChange={handleImageChange}
                 />
             </Form.Group>
-{/* 
+
             <Form.Group>
-                <Form.Label>Image</Form.Label>
+                <Form.Label>Excerpt</Form.Label>
                 <input
-                    type="file"
-                    id="add-image"
-                    placeholder="Image"
-                    name="file"
-                    required
-                    value={formUserInput.image}
-                    onChange={handleImageChange}
+                    type="text"
+                    id="add-user-lastname"
+                    placeholder="Excerpt"
+                    
+                    value={formUserInput.excerpt}
+                    onChange={handleExcerptChange}
                 />
-            </Form.Group> */}
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Text</Form.Label>
+                <textarea
+                    type="textarea"
+                    id="text"
+                    placeholder="Text"
+                    required
+                    value={formUserInput.text}
+                    onChange={handleTextChange}
+                    rows={4}
+                />
+            </Form.Group>
 
             <Form.Group>
             <Button id="submit" type="submit" variant="outline-success">{formUserInput.id_blog ? "Edit Student" : "Add Blog Post"}</Button>

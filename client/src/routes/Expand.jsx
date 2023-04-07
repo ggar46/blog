@@ -35,9 +35,9 @@ return(
         <h3>{post[0]?.title}</h3>
         <p>By: {post[0]?.author}</p>
         <p>{post[0]?.date.substring(0,10)}</p>
-        <img src={post[0]?.image}/>
+        <img id="pageImage" src={post[0]?.image}/>
         <p id="italicsExcerpt">{post[0]?.excerpt}</p>
-        <p>{post[0]?.text}</p>
+        <p id="bodyText"> {post[0]?.text}</p>
 
       
     </div>
